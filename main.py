@@ -1,13 +1,19 @@
+import os
+
+import uvicorn
 from fastapi import FastAPI
 
-app = FastAPI()
+from config import get_env
 
 
-@app.get("/")
-async def root():
-    return {"message": "Hello World"}
+def start_app():
+    app = FastAPI()
+    env = get_env()
+    for i in env.__dict__.items():
+        print(i)
+    print(os.getenv("FAST_API_ENV"))
+    return app
 
 
-@app.get("/hello/{name}")
-async def say_hello(name: str):
-    return {"message": f"Hello {name}"}
+if __name__ == "__main__":
+    uvicorn.run("main:start_app", host="0.0.0.0", port=8000, reload=True, factory=True)
