@@ -13,9 +13,9 @@ def start_app():
     app = FastAPI(debug=True)
     env = get_env()
     db.init_db(app=app, **env.dict())
-    # get_session = db.session
-    # session = next(get_session)
-    # print(session.query(text("select 1")))
+    get_session = db.session
+    session = next(get_session())
+    print(session.query(text("select 1")))
 
     # app.include_router(user, prefix="/users", tags=["Users"])
 
