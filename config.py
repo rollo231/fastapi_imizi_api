@@ -27,19 +27,19 @@ class Settings(BaseSettings):
 
 
 class DevSettings(Settings):
-    DB_URL = "mysql+pymysql://root:root@localhost:3306/imizi?charset=utf8mb4"
+    DB_URL = "mysql+pymysql://rollo:A!1q2w3e4r@localhost:3306/imizi?charset=utf8mb4"
     DB_POOL_SIZE = 5
     DB_MAX_OVERFLOW = 10
 
 
 class TestSettings(Settings):
-    DB_URL = "mysql+pymysql://root:root@localhost:3306/imizi?charset=utf8mb4"
+    DB_URL = "mysql+pymysql://rollo:A!1q2w3e4r@localhost:3306/imizi?charset=utf8mb4"
     DB_POOL_SIZE = 1
     DB_MAX_OVERFLOW = 0
 
 
 class ProdSettings(Settings):
-    DB_URL = "mysql+pymysql://root:root@localhost:3306/imizi?charset=utf8mb4"
+    DB_URL = "mysql+pymysql://rollo:A!1q2w3e4r@localhost:3306/imizi?charset=utf8mb4"
     DB_POOL_SIZE = 5
     DB_MAX_OVERFLOW = 10
 
